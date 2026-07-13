@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<nav class="navbar">
+  <div class="brand">
+    <div class="crest">
+      <!-- <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5.25 3.4 9.7 8 11 4.6-1.3 8-5.75 8-11V5l-8-3zm0 2.2 6 2.25V11c0 4.2-2.6 7.9-6 8.9-3.4-1-6-4.7-6-8.9V6.45l6-2.25z"/></svg> -->
+    <!-- margin: 0; -->
+       <img src="brookstoneLogo (1).svg" alt="">
+    </div>
+    <div class="brand-text">
+      <div class="name">BROOKSTONE SCHOOL</div>
+      <div class="tagline">(Primary Section)</div>
+    </div>
+  </div>
+
+  <!-- <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle navigation">☰</button> -->
+
+  <ul class="nav-links">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#">About Us</a></li>
+    <li><a href="#">Events</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Admission</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="#">FAQ</a></li>
+  </ul>
+</nav>
+</header>
+
+ <main>
+    <section class="hero" id="hero">
+
+  <div class="slide active"  data-index="0"> 
+
+    <video autoplay muted loop playsinline class="second-section-video">
+        <source src="agent_generate_video - Students walking through a bright school hallway, natural mo….mp4" type="video/mp4">
+    </video>
+
+
+</div>
+
+
+
+  <div class="slide"  data-index="1">
+      <video autoplay muted loop playsinline class="second-section-video">
+        <source src="agent_generate_video - Students sitting at desks in a bright classroom, teacher at….mp4" type="video/mp4">
+    </video>
+  </div>
+
+
+  <div class="slide"  data-index="2">
+      <video autoplay muted loop playsinline class="second-section-video">
+        <source src="agent_generate_video - Children running, playing and laughing on a school playgroun….mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-nav">
+      <button id="prevBtn" aria-label="Previous slide">&#8592;</button>
+      <button id="nextBtn" aria-label="Next slide">&#8594;</button>
+    </div>
+    <div class="hero-text">
+      <h1 id="heroTitle">Shaping Future Innovators</h1>
+      <p id="heroSubtitle">Our students thrive in an environment that fosters curiosity, creativity, and collaboration.</p>
+    </div>
+  </div>
+
+  <div class="dots" id="dots">
+    <span class="dot active" data-index="0"></span>
+    <span class="dot" data-index="1"></span>
+    <span class="dot" data-index="2"></span>
+  </div>
+</section>
+<!-- THIRD SECTION -->
+<section class="third-section">
+<div class="third-one"></div>
+<div class="third-two">
+    <p  class="welcome">WELCOME TO</p>
+    <p class="brook">BROOKSTONE SCHOOL (Primary)</p>
+
+<div class="brook-stone">
+    <p>Brookstone School (Secondary) is an Independent, co-educational school
+    with Christian ethos, founded in 2006 as a full boarding school. We are>
+    committed to delivering world-class education that equips students for>
+    success in higher education and beyond. We are passionate about>
+    cultivating accademic excellence, instilling Christian values, and fostering the>
+    diligence needed to thrive in an ever-changing world.>
+    </p>
+</div>
+
+</div>
+</section>
+<!-- ENING OF THIRD SECTION -->
+
+<!-- BEGINNING OF FOURTH SECTION -->
+
+
+ <section class="fourth-section">
+     <video autoplay muted loop playsinline>
+        <source src="agent_generate_video - Students sitting at desks in a bright classroom, teacher at….mp4" type="video/mp4">
+    </video>
+ </section>
+ <!-- ENDING OF FOURTH SECTION -->
+
+ <!-- BEGINNING OF FIFTH SECTION -->
+
+ <section class="fifth-section">
+<div class="fifth-section-a">
+    <p>WHY</p>
+
+    <p>BROOKSTONE SCHOOL (PRIMARY)</p>
+</div>
+
+
+<div class="fifth-section-b">
+
+    <div class="fifth-bi">
+<div class="a-one">
+<a href="">Accademic Excellence</a>
+</div>
+
+<div class="a-two">
+<a href="">Highly Qualified & Experienced Teachers</a>
+</div>
+
+<div class="a-three">
+<a href="">Examinations</a>
+</div>
+
+<div class="a-four">
+<a href="">Facilities</a>
+</div>
+
+    </div>
+
+
+    <div class="fifth-bii">
+        <p>We offer a broad range of subjects at both the Junior and Senior Secondary levels, expertly combining the Nigerian and British Curricula. Our highly qualified specialist teachers deliver lessons through interactive and immersive methods that bring learning to life.</p>
+
+        <p>At Brookstone Secondary School, students are well prepared for national, regional, and international examinations, consistently achieving outstanding results across all levels. We are committed to providing the individual attention and support each learner needs to reach their fullest potential.</p>
+    </div>
+
+</div>
+ </section>
+ 
+  <!-- ENDING OF FIFTH SECTION -->
+
+
+  <!-- BEGINNING OF SIXTH SECTION -->
+
+  <section class="sixth-section">
+    <div class="update-area">
+        <h1>WHAT ARE THE CURRENT UPDATES ON?</h1>
+    </div>
+
+    <div class="update-picture">
+<div class="picture-a"></div>
+<div class="picture-b"></div>
+<div class="picture-c"></div>
+<div class="picture-d"></div>
+    </div>
+
+
+  </section>
+  <!-- ENDING OF SIXTH SECTION -->
+
+  <section class="seventh-section">
+<div class="seventh-one">
+    <p>Blending Knowledge, innovation, affordability, and recreation to norture well-rounded students</p>
+</div>
+
+  </section>
+
+</main>
+
+
+<script src="main.js"></script>
+</body>
+</html>

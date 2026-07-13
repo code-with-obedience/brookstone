@@ -1,0 +1,669 @@
+  /* :root {
+    --navy: #2b1a63;
+    --navy-dark: #241353;
+    --gold: #f0a828;
+    --text-light: #e9e6f5;
+    --text-muted: #b9b0dd;
+  } */
+
+  * { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    }
+
+  body {
+    /* margin: 0; */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    overflow-x: hidden;
+    /* background: #f2f2f2; */
+  }
+header{
+    background:rgb(43, 25, 122);
+    width: 100%;
+    height: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+    flex-wrap: wrap;
+        z-index: 10;
+    /* position: relative; */
+        position: fixed;
+        padding-top: 20px;
+
+    /* position: fixed; */
+}
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 28px 0px; */
+     /* padding-left: 30px;
+    padding-right: 30px; */
+    flex-wrap: wrap;
+    margin-left:180px;
+    margin-right: 180px;
+    /* gap: 10px; */
+    /* position: absolute; */
+        flex-shrink: 0;
+
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+        gap: 30px;
+  }
+
+  .crest {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* border: 2px solid ; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .crest svg {
+    width: 28px;
+    height: 28px;
+    /* fill: var(--text-light); */
+  }
+
+  .brand-text .name {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+  }
+
+  .brand-text .tagline {
+    color:rgb(166, 143, 159);
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 50%;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: pink;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 6px 2px;
+    position: relative;
+    transition: color 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: green;
+  }
+
+  .nav-links a.active {
+    color: rgb(219, 180, 3);
+    font-weight: 700;
+  }
+
+  .nav-links a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    background: yellow;
+  }
+
+  /* Mobile */
+  /* .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+
+  @media (max-width: 800px) {
+    .menu-toggle { display: block; }
+    .nav-links {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      padding-top: 10px;
+    }
+    .nav-links.open { display: flex; }
+    .navbar { padding: 14px 20px; }
+  } */
+main{
+    padding-top: 100px;
+}
+  /* SECOND SECTION */
+  
+  .hero {
+    position: relative;
+    height: 88vh;
+    min-height: 480px;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  video{
+    width: 100vw;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
+  }
+
+  .slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(10,10,20,0.55) 0%, rgba(10,10,20,0.25) 55%, rgba(10,10,20,0.15) 100%);
+  }
+
+  .hero-content {
+    position: absolute;
+    left: 90px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 640px;
+    z-index: 5;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .hero-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+
+  .hero-nav button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid gold;
+    background: transparent;
+    color: var(--gold);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .hero-nav button:hover {
+    /* background: white; */
+    color: #1c1140;
+  }
+
+  .hero-text h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin: 0 0 14px;
+    line-height: 1.15;
+  }
+
+  .hero-text p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 520px;
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .dot.active {
+    background: var(--gold);
+    transform: scale(1.15);
+  }
+
+  /* @media (max-width: 700px) {
+    .hero-content { left: 30px; right: 30px; max-width: none; }
+    .hero-text h1 { font-size: 1.7rem; }
+    .hero-text p { font-size: 1rem; }
+  } */
+
+  /* THIRD SECTION */
+  .third-section{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 100vw;
+    min-height: 70vh;
+    position: relative;
+    background-image: url("images.jfif");
+    /* opacity: 0.7; */
+      background-size: contain;
+    background-position: center;
+    /* background-color: rgb(33, 32, 82); */
+    display: flex;
+    padding: 0px 120px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .third-one{
+    /* background-color: yellow; */
+    width: 30%;
+    height: 60vh;
+    background-image: url(ceo.jfif);
+    background-size: contain;
+    background-position: center;
+    border-radius: 40px;
+  }
+.third-two{
+    width: 50%;
+    height: 60vh;
+    background-color: rgb(150, 128, 7);
+    opacity: 0.6;
+    border-radius: 50px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+    padding-top: 30px;
+    /* padding-left: 8px;
+    padding-right: 8px; */
+    color: #cac4c4;
+    /* flex-wrap: wrap; */
+    /* flex-shrink: 0; */
+}
+
+@media (max-width: 1200px){
+      .third-section{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    width: 100vw;
+    min-height: 70vh;
+    position: relative;
+    background-image: url("images.jfif");
+    /* opacity: 0.7; */
+      background-size: cover;
+    background-position: center;
+    /* background-color: rgb(33, 32, 82); */
+    display: flex;
+    padding: 0px 120px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .third-two{
+   background-color: black;
+   text-align: center;
+   padding-top: 10px;
+   width: 60%;
+}
+
+.third-two .welcome{
+    font-size: 26px;
+}
+
+
+.third-two .brook{
+  font-size: 26px; 
+}
+
+.third-two .brook-stone{
+   line-height: 40px;
+   text-align:center;
+   /* background-color: yellow; */
+   /* width: 600px; */
+   flex-wrap: nowrap;
+}
+}
+
+.welcome{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+}
+.brook{
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.brook-stone{
+    line-height: 40px;
+    text-align: center;
+    /* font-size: 24px; */
+}
+
+/* ENDING OF THIRD SECTION */
+
+/* BEGINNING OF FOURTH SECTION */
+.fourth-section{
+    background-color: blue;
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    /* opacity: 0.8; */
+}
+/* ENDING OF FOURTH SECTION */
+
+/* BEGINNING OF FIFTH SECTION */
+.fifth-section{
+    width: 81%;
+    height: 76vh;
+    background:rgb(43, 25, 122);
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: -13rem;
+    padding-top: 30px;
+    position: absolute;
+    border-radius: 30px;
+    opacity: 0.9;
+    position: relative;
+   
+}
+
+.fifth-section-a{
+/* background-color: black; */
+/* color: orange; */
+text-align: center;
+font-size: 40px;
+margin-top: 20px;
+font-weight: 800;
+color: rgb(122, 107, 107);
+/* position: absolute; */
+}
+
+
+
+.fifth-section-b{
+    display: flex;
+    margin-right: 50px;
+    justify-content: space-between;
+    /* gap: 50px; */
+    margin-top: 120px;
+
+}
+
+.fifth-bi{
+    width: 416px;
+    height: 285px;
+    /* padding: 20px 0px 20px 0px; */
+    padding-left: 20px;
+    padding-top: 20px;
+    /* background-color: red; */
+    aspect-ratio: 0;
+    /* QUESTION TO ASK AI: what do i do to make my div reduce as the desktop size reduces */
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    border: 1px solid burlywood;
+    margin-left: 10px;
+    border-radius: 20px;
+}
+
+.fifth-bi a{
+    color: rgb(176, 157, 160);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.fifth-bi a:hover{
+    color: orange;
+    background-color: #1c1140;
+}
+
+.a-one{
+/* background-color: green; */
+padding: 10px;
+    border-bottom: 1px solid rgb(176, 157, 160);
+/* width: 300px; */
+}
+
+
+.a-two{
+/* background-color: green; */
+padding: 10px;
+    border-bottom: 1px solid rgb(176, 157, 160);
+/* width: 350px; */
+}
+.a-three{
+/* background-color: green; */
+padding: 10px;
+    border-bottom: 1px solid rgb(176, 157, 160);
+/* width: 350px; */
+}
+.a-four{
+/* background-color: green; */
+padding: 10px;
+    border-bottom: 1px solid rgb(176, 157, 160);
+/* width: 350px; */
+}
+
+
+
+.fifth-bii{
+    /* width: 60%; */
+    width: 777px;
+    height: 285px;
+    /* background-color: yellow; */
+    /* flex-shrink: 10; */
+    flex-wrap: wrap;
+    padding: 30px;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 30px;
+       border: 1px solid burlywood;
+    /* margin-left: 10px; */
+    border-radius: 20px; color: rgb(176, 157, 160);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+@media (max-width: 1200px){
+ .fifth-section{
+    width: 90%;
+    margin-left: 5%;
+    /* margin-right: 5%; */
+    padding-top: 5px;
+    /* padding-right: 5px; */
+    /* gap: 50px; */
+   
+}  
+
+.fifth-section-a{
+/* background-color: black; */
+/* color: orange; */
+/* text-align: center; */
+font-size: 40px;
+margin-top: 5px;
+font-weight: 800;
+/* color: orange; */
+/* position: absolute; */
+}
+
+.fifth-section-b{
+    display: flex;
+    margin-right: 0px;
+    /* background-color: pink; */
+    /* justify-content: space-between; */
+    /* gap: 50px; */
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 0px;
+
+}
+
+.fifth-bi{
+    width: 416px;
+    height: 285px;
+    /* padding: 20px 0px 20px 0px; */
+    padding-left: 20px;
+    padding-top: 20px;
+    /* background-color: red; */
+    aspect-ratio: 0;
+    /* QUESTION TO ASK AI: what do i do to make my div reduce as the desktop size reduces */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid burlywood;
+    margin-left: 10px;
+    border-radius: 20px;
+}
+
+.fifth-bii{
+    /* width: 60%; */
+    width: 600px;
+    height: 285px;
+    /* background-color: yellow; */
+    /* flex-shrink: 10; */
+    flex-wrap: wrap;
+    padding: 30px;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 30px;
+       border: 1px solid burlywood;
+    /* margin-left: 10px; */
+    border-radius: 20px; color: rgb(176, 157, 160);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+}
+
+/* ENDING OF FIFTH SECTION */
+
+/* BEGINNING OF SIXTH SECTION */
+.sixth-section{
+    background-color: rgb(128, 0, 32);
+    width: 100%;
+    min-height: 80vh;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-top: 3rem;
+    margin-top: 5rem;
+    color: white;
+}
+
+.update-area{
+    text-align: center;
+}
+.update-picture{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8rem;
+}
+.picture-a{
+    border: 1px solid burlywood;
+    width: 285px;
+    height: 292px;
+    border-radius: 20px;
+    background-image: url(neco.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.picture-b{
+    border: 1px solid burlywood;
+    width: 285px;
+    height: 292px;
+    border-radius: 20px;
+
+    background-image: url(cambridge.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.picture-c{
+    border: 1px solid burlywood;
+    width: 285px;
+    height: 292px;
+    border-radius: 20px;
+
+    background-image: url(british.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.picture-d{
+    border: 1px solid burlywood;
+    width: 285px;
+    height: 292px;
+    border-radius: 20px;
+
+    background-image: url(waec.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+@media (max-width: 1200px){
+.sixth-section{
+    /* background-color: yellow; */
+   padding-top: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+} 
+
+.update-picture{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+}
+
+/* ENDING OF SIXTH SECTION */
+
+/* BEGINNING OF SEVENTH SECTION */
+
+.seventh-section{
+    background-color: orange;
+    width: 100vw;
+    height: 100vh;
+}
+/* ENDING OF SEVENTH SECTION */

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Brookstone School — Hero Slider</title>
+<style>
+  :root {
+    --navy: #2b1a63;
+    --gold: #f0a828;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+
+  .hero {
+    position: relative;
+    height: 88vh;
+    min-height: 480px;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
+  }
+
+  .slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(10,10,20,0.55) 0%, rgba(10,10,20,0.25) 55%, rgba(10,10,20,0.15) 100%);
+  }
+
+  .hero-content {
+    position: absolute;
+    left: 90px;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 640px;
+    z-index: 5;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .hero-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+
+  .hero-nav button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .hero-nav button:hover {
+    background: var(--gold);
+    color: #1c1140;
+  }
+
+  .hero-text h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin: 0 0 14px;
+    line-height: 1.15;
+  }
+
+  .hero-text p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 520px;
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .dot.active {
+    background: var(--gold);
+    transform: scale(1.15);
+  }
+
+  @media (max-width: 700px) {
+    .hero-content { left: 30px; right: 30px; max-width: none; }
+    .hero-text h1 { font-size: 1.7rem; }
+    .hero-text p { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero" id="hero">
+  <div class="slide active" style="background-image: url('assets/slide1.png');" data-index="0"></div>
+  <div class="slide" style="background: linear-gradient(135deg, #1f2f6b, #3a1f6b);" data-index="1"></div>
+  <div class="slide" style="background: linear-gradient(135deg, #10306b, #123a7a);" data-index="2"></div>
+
+  <div class="hero-content">
+    <div class="hero-nav">
+      <button id="prevBtn" aria-label="Previous slide">&#8592;</button>
+      <button id="nextBtn" aria-label="Next slide">&#8594;</button>
+    </div>
+    <div class="hero-text">
+      <h1 id="heroTitle">Shaping Future Innovators</h1>
+      <p id="heroSubtitle">Our students thrive in an environment that fosters curiosity, creativity, and collaboration.</p>
+    </div>
+  </div>
+
+  <div class="dots" id="dots">
+    <span class="dot active" data-index="0"></span>
+    <span class="dot" data-index="1"></span>
+    <span class="dot" data-index="2"></span>
+  </div>
+</section>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const titleEl = document.getElementById('heroTitle');
+  const subtitleEl = document.getElementById('heroSubtitle');
+
+  // Replace the text/gradients for slide 2 and 3 with real content and photos
+  // whenever those images are available.
+  const slideContent = [
+    { title: 'Shaping Future Innovators', subtitle: 'Our students thrive in an environment that fosters curiosity, creativity, and collaboration.' },
+    { title: 'Excellence In Every Classroom', subtitle: 'A curriculum built to challenge, inspire, and prepare students for the world ahead.' },
+    { title: 'A Community That Grows Together', subtitle: 'From sports to the arts, Brookstone nurtures every side of a student\u2019s potential.' }
+  ];
+
+  let current = 0;
+  let timer;
+  const AUTO_DELAY = 5000;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+    titleEl.textContent = slideContent[current].title;
+    subtitleEl.textContent = slideContent[current].subtitle;
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function startAuto() {
+    timer = setInterval(next, AUTO_DELAY);
+  }
+
+  function resetAuto() {
+    clearInterval(timer);
+    startAuto();
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => { next(); resetAuto(); });
+  document.getElementById('prevBtn').addEventListener('click', () => { prev(); resetAuto(); });
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => { goTo(parseInt(dot.dataset.index)); resetAuto(); });
+  });
+
+  startAuto();
+</script>
+
+</body>
+</html>

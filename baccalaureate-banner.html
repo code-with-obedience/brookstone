@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Brookstone School — Baccalaureate Banner</title>
+<style>
+  :root {
+    --navy: #1b2a52;
+    --gold: #c9a227;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+  }
+
+  .page-banner {
+    position: relative;
+    width: 100%;
+    min-height: 280px;
+    background-image: url(backround.jfif);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  /* This graphic already has the crest and title baked into it at 515x293px.
+     If you can provide the crest and title as separate, higher-resolution
+     assets (or a bigger source photo), I can rebuild this as a crisp,
+     fully responsive banner with live/editable text instead. */
+
+  @media (max-width: 600px) {
+    .page-banner { min-height: 200px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="page-banner" role="img" aria-label="Brookstone School Baccalaureate banner"></section>
+
+</body>
+</html>
